@@ -284,11 +284,12 @@
     <div class="sec-head"><span class="sec-num">01</span>
       <div>
         <h2 class="sec-title">Look into a reconstruction</h2>
-        <p class="sec-lede">Live in the browser — orbit the scene, isolate groups, compare render against the real capture.</p>
+        <p class="sec-lede">Live in the browser — orbit the scene, isolate groups, compare render against the real capture, or <b>walk through it in first person</b>.</p>
       </div>
     </div>
     <div class="tabrow">
       <div class="tabs" id="tabs"></div>
+      <a class="openfull" id="walkOpen" href="vr/Office-Elliott-QC.html" target="_blank" rel="noopener">walk in 3D ↗</a>
       <a class="openfull" id="frameOpen" href="https://litereality-viewer.huangzhening.workers.dev/recon/Office-Elliott-QC/" target="_blank" rel="noopener">open full viewer ↗</a>
     </div>
     <div class="frame reveal">
@@ -487,6 +488,7 @@ tabs.onclick = e => {
   tabs.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === b));
   frameOpen.href = BASE + encodeURIComponent(b.dataset.id) + "/";
   frameView.src = frameOpen.href + "?embed=1";  // embed=1 strips the viewer's page chrome
+  document.getElementById("walkOpen").href = "vr/" + encodeURIComponent(b.dataset.id) + ".html";
   veil.classList.remove("off");
 };
 
